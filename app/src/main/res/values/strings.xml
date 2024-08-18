@@ -1,0 +1,65 @@
+<resources>
+
+    <string name="app_name">TravelApp</string>
+
+    <string name="onboarding_desc_1">Enjoy your winter vacations with warmth and amazing sightseeing on the mountains. Enjoy the best experience with us!</string>
+    <string name="onboarding_desc_2">To get the best of your adventure you just need to leave and go where you like. we are waiting for you! </string>
+    <string name="onboarding_desc_3">Discover new destinations, save favorites, and get personalized travel recommendations. Ready for your next adventure? </string>
+
+    <string name="onboarding_title_1">Life is short and the world is wide</string>
+    <string name="onboarding_title_2">It\'s a big world out there go explore</string>
+    <string name="onboarding_title_3">People don\'t take trips, trips take people</string>
+
+
+
+    <string name="mount_fuji">Mount Fuji</string>
+    <string name="matterhorn_mountain">Mount Matterhorn </string>
+    <string name="mount_kilimanjaro">Mount Kilimanjaro</string>
+    <string name="everest">Mount Everest</string>
+    <string name="kailash">Kailash</string>
+    <string name="mount_olympus">Mount Olympus</string>
+    <string name="amazon_river">Amazon River</string>
+    <string name="ananthagiri_hills">Ananthagiri Hills</string>
+    <string name="dolomites">Dolomites</string>
+    <string name="denali">Denali</string>
+    <string name="mirik">Mirik</string>
+    <string name="alps">Alps </string>
+
+
+    <string name="lorem">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Dignissim eget amet viverra eget fames rhoncus. Eget enim venenatis enim porta egestas malesuada et. Consequat mauris lacus euismod montes.</string>
+    <string name="mount_fuji_desc">Japan’s Mt. Fuji is an active volcano about 100 kilometers southwest of Tokyo. Commonly called “Fuji-san,” it’s the country’s tallest peak, at 3,776 meters. A pilgrimage site for centuries, it’s considered one of Japan’s 3 sacred mountains, and summit hikes remain a popular activity. Its iconic profile is the subject of numerous works of art.</string>
+    <string name="everest_desc">Mount Everest is Earth\'s highest mountain above sea level, located in the Mahalangur Himal sub-range of the Himalayas. The China–Nepal border runs across its summit point. Its elevation of 8,848.86 m was most recently established in 2020 by the Chinese and Nepali authorities</string>
+    <string name="kailash_desc">Mount Kailash is a mountain in Ngari Prefecture, Tibet Autonomous Region of China. It lies in the Kailash Range of the Transhimalaya, in the western part of the Tibetan Plateau. The peak of Mount Kailash is located at an elevation of 6,638 m, near the trijunction between China, India and Nepal.</string>
+    <string name="matterhorn_desc">The Matterhorn is a mountain of the Alps, straddling the main watershed and border between Italy and Switzerland. It is a large, near-symmetric pyramidal peak in the extended Monte Rosa area of the Pennine Alps, whose summit is 4,478 metres above sea level, making it one of the highest summits in the Alps and Europe.</string>
+    <string name="mount_kilimanjaro_desc">Mount Kilimanjaro is a dormant volcano in Tanzania. With three volcanic cones — Kibo, Mawenzi and Shira — it is the highest mountain in Africa and the highest single free-standing mountain above sea level in the world: 5,895 m above sea level and 4,900 m above its plateau base.</string>
+    <string name="mount_olympus_desc">Mount Olympus is an extensive massif near the Thermaic Gulf of the Aegean Sea, located on the border between Thessaly and Macedonia, between the regional units of Larissa and Pieria, about 80 km southwest from Thessaloniki. Mount Olympus has 52 peaks and deep gorges.</string>
+    <string name="amazon_river_desc">The Amazon River in South America is the largest river by discharge volume of water in the world, and the longest or second-longest river system in the world, a title which is disputed with the Nile.</string>
+    <string name="ananthagiri_desc"> Ananthagiri Hills is located in Vikarabad district, Telangana, India. The water flows from these hills to Osman Sagar, also known as Gandipet lake, and Himayathsagar. It is one of the dense forests in Telangana. Ananthagiri Temple is located in this forested area.</string>
+    <string name="dolomites_desc">The Dolomites, also known as the Dolomite Mountains, Dolomite Alps or Dolomitic Alps, are a mountain range in northeastern Italy. They form part of the Southern Limestone Alps and extend from the River Adige in the west to the Piave Valley in the east. </string>
+    <string name="denali_desc">Denali is the highest mountain peak in North America, with a summit elevation of 20,310 feet above sea level.</string>
+    <string name="mirik_desc">Mirik is a small town and a Notified Area of Darjeeling district in the state of West Bengal, India. It is the headquarters of the Mirik subdivision. The name Mirik comes from the Lepcha words Mir-Yok meaning "place burnt by fire".</string>
+    <string name="alps_desc">The Alps are one of the highest and most extensive mountain ranges in Europe, stretching approximately 1,200 km across eight Alpine countries: Monaco, France, Switzerland, Italy, Liechtenstein, Germany, Austria and Slovenia.</string>
+    <string name="add_desc"> </string>
+    <string name="ir_desc"> </string>
+    <string name="ii_desc"> </string>
+
+    <string name="mount_fuji_location">Honshu, Japan</string>
+    <string name="everest_location">Himalayas, Asia</string>
+    <string name="matterhorn_location">Switzerland, Europe</string>
+    <string name="kailash_location">Ngari Prefecture, Tibet</string>
+    <string name="mount_kilimanjaro_location">Tanzania, Africa</string>
+    <string name="mount_olympus_location">Greece</string>
+    <string name="amazon_river_location">Greece</string>
+    <string name="ananthagiri_location">Telangana, India</string>
+    <string name="dolomites_location">Northeastern Italy</string>
+    <string name="denali_location">Alaska, North America</string>
+    <string name="mirik_location">Darjeeling, India</string>
+    <string name="alps_location">Europe</string>
+    <string name="k_location"> </string>
+    <string name="b_location"> </string>
+
+    <string name="empty_favourite_text">Tap the button below to add some destinations to your favourite list.</string>
+    <string name="developer_description"> An Android Developer with 1 year of experience in creating user-friendly apps. Skilled in Kotlin and Jetpack Compose for Android development, and Python for backend solutions.</string>
+    <string name="empty_booking_page">Tap the button below to book some trips to the best destinations.</string>
+
+</resources>
