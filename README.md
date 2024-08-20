@@ -1,6 +1,6 @@
 # 🏝️ Tour Booking App
 
-🚀 **Excited to share my latest project!** This Tour Booking App is crafted using Jetpack Compose for a modern, responsive UI, Firebase for secure authentication, Coil for efficient image loading, and Razorpay for a seamless and secure payment experience.
+This Tour Booking App is crafted using Jetpack Compose for a modern, responsive UI, Firebase for secure authentication, Coil for efficient image loading, and Razorpay for a seamless and secure payment experience.
 
 ## 💡 Key Features
 
