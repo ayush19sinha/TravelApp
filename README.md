@@ -12,6 +12,15 @@ This Tour Booking App is crafted using Jetpack Compose for a modern, responsive 
 - **Profile Management**: Easily update your name, email, and profile picture.
 - **Light and Dark Mode**: Enjoy a visually pleasing experience, whether in bright daylight or a dimly lit room.
 
+## App Demo
+
+
+
+
+https://github.com/user-attachments/assets/5e7a86ee-e295-4814-9f9d-b3f52ce21fcf
+
+
+
 ## 🛠️ Tech Stack
 
 - **Jetpack Compose**: For a modern and flexible UI.
