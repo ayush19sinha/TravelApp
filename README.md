@@ -12,7 +12,7 @@ This Tour Booking App is crafted using Jetpack Compose for a modern, responsive 
 - **Profile Management**: Easily update your name, email, and profile picture.
 - **Light and Dark Mode**: Enjoy a visually pleasing experience, whether in bright daylight or a dimly lit room.
 
-## App Demo
+## 🎥 App Demo
 
 
 
@@ -34,4 +34,4 @@ To get started with the Tour Booking App:
 
 1. **Clone the repository**:
    ```bash
-   git clone https://github.com/your-username/tour-booking-app.git
+   git clone https://github.com/ayush19sinha/TravelApp.git
