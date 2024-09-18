@@ -1,5 +1,6 @@
 package my.android.travelapp
 
+import BookingViewModel
 import FavoritesViewModel
 import android.os.Bundle
 import android.widget.Toast
@@ -15,6 +16,7 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.compose.rememberNavController
 import com.razorpay.PaymentResultListener
+import my.android.travelapp.data.Booking
 import my.android.travelapp.navigation.Navigation
 import my.android.travelapp.navigation.Routes
 import my.android.travelapp.ui.theme.TravelAppTheme
@@ -27,17 +29,13 @@ class MainActivity : ComponentActivity(), PaymentResultListener {
     private lateinit var paymentViewModel: PaymentViewModel
     private lateinit var authViewModel: AuthViewModel
     private lateinit var themeViewModel: ThemeViewModel
-
-
+    private lateinit var bookingViewModel: BookingViewModel
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
 
-        themeViewModel = ViewModelProvider(this)[ThemeViewModel::class.java]
-        paymentViewModel = ViewModelProvider(this)[PaymentViewModel::class.java]
-        authViewModel = ViewModelProvider(this)[AuthViewModel::class.java]
-
+        initViewModels()
 
         setContent {
             val isDarkTheme by themeViewModel.isDarkTheme.observeAsState(initial = false)
@@ -45,19 +43,13 @@ class MainActivity : ComponentActivity(), PaymentResultListener {
             TravelAppTheme(darkTheme = isDarkTheme) {
                 val navController = rememberNavController()
                 val favoritesViewModel: FavoritesViewModel = viewModel()
-                val paymentSuccess = paymentViewModel.paymentSuccess.observeAsState()
+                val paymentSuccess by paymentViewModel.paymentSuccess.observeAsState(initial = false)
 
-                if (paymentSuccess.value == true) {
-                    navController.navigate(Routes.home) {
-                        popUpTo(Routes.home) { inclusive = true }
-                    }
-                    paymentViewModel.resetPaymentSuccess()
+                if (paymentSuccess) {
+                    handleSuccessfulPayment(navController)
                 }
 
                 Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-
-
-
                     Navigation(
                         navController = navController,
                         favoritesViewModel = favoritesViewModel,
@@ -67,6 +59,36 @@ class MainActivity : ComponentActivity(), PaymentResultListener {
                 }
             }
         }
+    }
+
+    private fun initViewModels() {
+        themeViewModel = ViewModelProvider(this)[ThemeViewModel::class.java]
+        paymentViewModel = ViewModelProvider(this)[PaymentViewModel::class.java]
+        authViewModel = ViewModelProvider(this)[AuthViewModel::class.java]
+        bookingViewModel = ViewModelProvider(this)[BookingViewModel::class.java]
+    }
+
+    private fun handleSuccessfulPayment(navController: androidx.navigation.NavController) {
+        val detailData = paymentViewModel.getDetailData()
+        detailData?.let {
+            val newBooking = Booking(
+                img = it.img,
+                title = it.title,
+                rating = it.rating,
+                ratingCount = it.ratingCount,
+                desc = it.desc,
+                location = it.location,
+                price = it.price,
+                continent = it.continent,
+                date = System.currentTimeMillis()
+            )
+            bookingViewModel.addTripToBookings(newBooking)
+        }
+
+        navController.navigate(Routes.home) {
+            popUpTo(Routes.home) { inclusive = true }
+        }
+        paymentViewModel.resetPaymentSuccess()
     }
 
     override fun onPaymentSuccess(razorpayPaymentId: String?) {

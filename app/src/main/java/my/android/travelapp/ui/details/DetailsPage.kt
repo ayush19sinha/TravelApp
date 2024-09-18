@@ -3,9 +3,6 @@ package my.android.travelapp.ui.details
 import FavoritesViewModel
 import android.app.Activity
 import android.widget.Toast
-import androidx.compose.animation.AnimatedVisibilityScope
-import androidx.compose.animation.ExperimentalSharedTransitionApi
-import androidx.compose.animation.SharedTransitionScope
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
@@ -58,12 +55,10 @@ import my.android.travelapp.R
 import my.android.travelapp.data.DetailData
 import my.android.travelapp.viewModels.PaymentViewModel
 
-@OptIn(ExperimentalSharedTransitionApi::class)
 @Composable
-fun SharedTransitionScope.DetailsPage(navController: NavController,
+fun DetailsPage(navController: NavController,
                 viewModel: FavoritesViewModel,
                 detailData: DetailData,
-                                      animatedVisibilityScope: AnimatedVisibilityScope
 ) {
     Box(modifier = Modifier.fillMaxSize()) {
 
@@ -216,7 +211,7 @@ fun AboutLayer(
 
 
             DescriptionSection(
-                description = stringResource(id = detailData.desc),
+                detailData = detailData,
                 cost = cost,
                 paymentViewModel = PaymentViewModel(),
 
@@ -254,71 +249,6 @@ fun RatingRow(rating: String, ratingCount: String) {
                     .padding(start = 4.dp))
     }
 }
-
-
-
-//@Composable
-//fun DaysSelector(days: Int, onDaysChange: (Int) -> Unit) {
-//    Row(
-//        modifier = Modifier
-//            .fillMaxWidth()
-//            .padding(top = 30.dp),
-//        verticalAlignment = Alignment.CenterVertically
-//    ) {
-//        Box(
-//            modifier = Modifier
-//                .size(28.dp, 36.dp)
-//                .clickable {
-//                    onDaysChange(
-//                        (days - 1)
-//                            .coerceAtLeast(0)
-//                    )
-//                }
-//                .background(Color(0xFF897CFF))
-//                .clip(RoundedCornerShape(50.dp)),
-//            contentAlignment = Alignment.Center
-//        ) {
-//            Box(
-//                modifier = Modifier
-//                    .background(MaterialTheme.colorScheme.background)
-//                    .size(12.dp, 2.dp)
-//            )
-//        }
-//        Box(
-//            modifier = Modifier
-//                .background(MaterialTheme.colorScheme.onPrimary)
-//                .size(46.dp, 34.dp),
-//            contentAlignment = Alignment.Center
-//        ) {
-//            Text(text = "$days", modifier = Modifier.padding(horizontal = 8.dp))
-//        }
-//        Box(
-//            modifier = Modifier
-//                .size(28.dp, 36.dp)
-//                .clickable {
-//                    onDaysChange(
-//                        (days + 1)
-//                            .coerceAtMost(30)
-//                    )
-//                }
-//                .background(Color(0xFF897CFF))
-//                .clip(RoundedCornerShape(20.dp)),
-//            contentAlignment = Alignment.Center
-//        ) {
-//            Icon(
-//                imageVector = Icons.Default.Add,
-//                contentDescription = null,
-//                tint = MaterialTheme.colorScheme.background
-//            )
-//        }
-//        Icon(
-//            painter = painterResource(id = R.drawable.ic_time),
-//            contentDescription = null,
-//            Modifier.padding(start = 26.dp)
-//        )
-//        Text(text = "$days Days", Modifier.padding(start = 8.dp), fontSize = 18.sp)
-//    }
-//}
 
 
 @Composable
@@ -375,7 +305,7 @@ fun SmallIconImage(img: Int ){
 }
 
 @Composable
-fun DescriptionSection(description: String,
+fun DescriptionSection(detailData: DetailData,
                        cost: Int,
                        paymentViewModel: PaymentViewModel,
 ) {
@@ -393,7 +323,7 @@ fun DescriptionSection(description: String,
         Column(verticalArrangement = Arrangement.spacedBy(60.dp)) {
 
         Text(
-            text = description,
+            text = stringResource(id = detailData.desc),
             modifier = Modifier.padding(top = 18.dp),
             fontSize = 16.sp
         )
@@ -423,7 +353,7 @@ fun DescriptionSection(description: String,
 
                     else activity?.let {
                             paymentViewModel
-                                .startPayment(it, cost)
+                                .startPayment(it, cost, detailData = detailData)
 
                     }
 
@@ -440,14 +370,6 @@ fun DescriptionSection(description: String,
     }}
 }
 
-//fun calculateCost(detailData: DetailData, days: Int): Int {
-//    val initialCost = detailData.price * 5
-//    return if (days > 5) {
-//        initialCost + ((days - 5) * 500)
-//    } else {
-//        detailData.price * days
-//    }
-//}
 
 
 
@@ -457,28 +379,3 @@ fun DescriptionSection(description: String,
 
 
 
-
-
-
-
-//@Preview(name = "Dark Mode", uiMode = Configuration.UI_MODE_NIGHT_UNDEFINED, showBackground = true)
-//@Preview
-//@Composable
-//fun DetailsPagePreview() {
-//    val navController = rememberNavController()
-//    val viewModel = FavoritesViewModel()
-//    val data = DetailData(
-//        img = R.drawable.mount1,
-//        title = R.string.mount_fuji,
-//        rating = "5",
-//        "(1235)",
-//        desc = R.string.mount_fuji_desc,
-//        location = R.string.mount_fuji_location,
-//        price = 1000,
-//        "Asia"
-//    )
-//    DetailsPage(navController = navController,
-//        detailData = data,
-//        viewModel = viewModel,
-//    )
-//}

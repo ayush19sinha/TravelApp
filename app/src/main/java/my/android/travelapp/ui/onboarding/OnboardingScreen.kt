@@ -1,4 +1,4 @@
-package my.android.travelapp.onboarding
+package my.android.travelapp.ui.onboarding
 
 import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.animation.core.Spring

@@ -11,16 +11,16 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.navArgument
 import my.android.travelapp.data.details
-import my.android.travelapp.onboarding.ForgetPassword
-import my.android.travelapp.onboarding.LoginScreen
-import my.android.travelapp.onboarding.OnboardingScreen
-import my.android.travelapp.onboarding.OtpVerification
-import my.android.travelapp.onboarding.SignupScreen
 import my.android.travelapp.ui.details.DetailsPage
 import my.android.travelapp.ui.home.Home
 import my.android.travelapp.ui.home.MostVisited
 import my.android.travelapp.ui.home.RecommendedPage
 import my.android.travelapp.ui.home.SearchPage
+import my.android.travelapp.ui.onboarding.ForgetPassword
+import my.android.travelapp.ui.onboarding.LoginScreen
+import my.android.travelapp.ui.onboarding.OnboardingScreen
+import my.android.travelapp.ui.onboarding.OtpVerification
+import my.android.travelapp.ui.onboarding.SignupScreen
 import my.android.travelapp.ui.profile.AboutDeveloperPage
 import my.android.travelapp.ui.profile.BookingPage
 import my.android.travelapp.ui.profile.DeletionScreen
@@ -70,7 +70,6 @@ fun Navigation(navController: NavController,
                 val placeId = backStackEntry.arguments?.getInt("placeId") ?: 0
                 DetailsPage(navController, detailData = details[placeId],
                     viewModel = favoritesViewModel,
-                    animatedVisibilityScope = this@composable
                 )
             }
 

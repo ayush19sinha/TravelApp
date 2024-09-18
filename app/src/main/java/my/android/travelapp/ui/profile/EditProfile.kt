@@ -96,13 +96,13 @@ fun EditProfile(navController: NavController,
 fun ProfilePictureEditable() {
 
     val context = LocalContext.current
-    val defaultUri = Uri.parse("android.resource://${context.packageName}/${R.drawable.avatar}")  //converting my drawable file to uri
+    val defaultUri = Uri.parse("android.resource://${context.packageName}/${R.drawable.avatar}")
 
     var imageUri by remember {
         mutableStateOf<Uri?>(defaultUri)
     }
 
-    val photoPickerLauncher = rememberLauncherForActivityResult(                                    //opening gallery and setting the new image as uri
+    val photoPickerLauncher = rememberLauncherForActivityResult(
         contract = ActivityResultContracts.PickVisualMedia(), onResult = { uri ->
             uri?.let {
                 imageUri = it

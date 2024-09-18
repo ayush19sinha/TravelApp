@@ -1,4 +1,4 @@
-package my.android.travelapp.onboarding
+package my.android.travelapp.ui.onboarding
 
 import android.widget.Toast
 import androidx.compose.foundation.Image

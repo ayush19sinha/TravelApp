@@ -7,17 +7,20 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.razorpay.Checkout
+import my.android.travelapp.data.DetailData
 import org.json.JSONObject
 
 class PaymentViewModel : ViewModel() {
 
     private val _paymentSuccess = MutableLiveData<Boolean>()
     val paymentSuccess: LiveData<Boolean> = _paymentSuccess
+    private var _detailData: DetailData? = null  // Store detailData
 
 
-    fun startPayment(activity: Activity, amount: Int) {
+    fun startPayment(activity: Activity, amount: Int, detailData: DetailData) {
         val checkout = Checkout()
-        checkout.setKeyID("Your_Razor_PAY_API_KEY") // Replace this with your actual API key
+        checkout.setKeyID("rzp_test_3bB49k9EKzkgHb") // Replace this with your actual API key
+        _detailData = detailData
 
         try {
             val options = createPaymentOptions(amount)
@@ -61,6 +64,9 @@ class PaymentViewModel : ViewModel() {
             Toast.makeText(activity, message, Toast.LENGTH_LONG).show()
         }
 
+    }
+    fun getDetailData(): DetailData? {
+        return _detailData
     }
 
     companion object {

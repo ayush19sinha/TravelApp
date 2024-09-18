@@ -1,4 +1,4 @@
-package my.android.travelapp.onboarding
+package my.android.travelapp.ui.onboarding
 
 import androidx.annotation.StringRes
 import my.android.travelapp.R
